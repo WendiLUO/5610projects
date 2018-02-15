@@ -1,9 +1,12 @@
 # 5610projects
 course project 
+
 Project Proposal for CS 5610
 Group Member: Yunke Li 
 Yuheng Liu
 Wendi Luo
+
+
 In this team project we intend to develop a website named ShakePaw. 
 At the present stage, we envision the main function of this website 
 to be the personal blog for Noodle, a Maltipoo belongs to our group 
