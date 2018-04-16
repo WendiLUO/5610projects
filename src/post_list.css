@@ -1,0 +1,158 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+#cssmenu {
+  width: auto;
+  border-bottom: 3px solid #47c9af;
+  font-family: Raleway, sans-serif;
+  line-height: 1;
+}
+#cssmenu ul {
+  background: #ffffff;
+}
+#cssmenu > ul > li {
+  float: left;
+}
+#cssmenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+#cssmenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+#cssmenu.align-right > ul > li {
+  float: right;
+}
+#cssmenu.align-right > ul > li > a {
+  margin-right: 0;
+  margin-left: -4px;
+}
+#cssmenu > ul > li > a {
+  z-index: 2;
+  padding: 18px 25px 12px 25px;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #444444;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  margin-right: -4px;
+}
+#cssmenu > ul > li.active > a,
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li > a:hover {
+  color: #ffffff;
+}
+.my_plus{
+  position: absolute !important;
+  top: 15px !important;
+  right: 15px !important;
+  color: #2be2c3 !important;
+}
+#cssmenu > ul > li > a:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  content: "";
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: perspective(5px) rotateX(2deg);
+  -webkit-transform-origin: bottom;
+  -moz-transform: perspective(5px) rotateX(2deg);
+  -moz-transform-origin: bottom;
+  transform: perspective(5px) rotateX(2deg);
+  transform-origin: bottom;
+}
+#cssmenu > ul > li.active > a:after,
+#cssmenu > ul > li:hover > a:after,
+#cssmenu > ul > li > a:hover:after {
+  background: #47c9af;
+}
+
+form {
+  width: 900px;
+  height: 260px;
+  margin: 50px;
+  background: white;
+  border-radius: 3px;
+  text-align: center;
+  padding-top: 1px;
+  border:0px;
+}
+
+form.profile{																				/* Register form height */
+  height: 420px;
+}
+
+form .text-field {																			/* Input fields; Username, Password etc. */
+  border: 1px solid #a6a6a6;
+  width: 500px;
+  height: 40px;
+  border-radius: 3px;
+  margin-top: 10px;
+  padding-left: 10px;
+  color: #6c6c6c;
+  background: #fcfcfc;
+  outline: none;
+}
+
+form .text-field:focus {
+  box-shadow: inset 0 0 2px rgba(0,0,0, .3);
+  color: #a6a6a6;
+  background: white;
+}
+
+form .button {																				/* Submit button */
+  border-radius: 3px;
+  border: 1px solid #52e9b2;
+  box-shadow: inset 0 1px 0 #83f0d8;
+  width: 242px;
+  height: 40px;
+  margin-top: 20px;
+
+  background: linear-gradient(bottom, #52e9b2 0%, #52e9b2 100%);
+  background: -o-linear-gradient(bottom, #52e9b2 0%, #83f0d8 100%);
+  background: -moz-linear-gradient(bottom, #52e9b2 0%, #83f0d8 100%);
+  background: -webkit-linear-gradient(bottom, #52e9b2 0%, #83f0d8 100%);
+  background: -ms-linear-gradient(bottom, #52e9b2 0%, #83f0d8 100%);
+
+  cursor: pointer;
+  color: #f3ffe6;
+  font-weight: bold;
+  text-shadow: 0 -1px 0 #336895;
+
+  font-size: 13px;
+}

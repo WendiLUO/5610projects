@@ -1,0 +1,54 @@
+<div id='cssmenu'>
+  <ul>
+    <li><a href='post_list.html'>Home</a></li>
+    <li><a href='personal_post.html'>Your Posts</a></li>
+    <li class='active'><a href='#'>Profile</a></li>
+  </ul>
+</div>
+
+<div>
+  <a href="new_post.html" class="glyphicon glyphicon-plus my_plus"></a>
+</div>
+
+<div class="container">
+  <div id="form-main">
+    <div id="form-div">
+      <form class="montform" id="reused_form" >
+        <p class="name">
+          <input [(ngModel)]="name" name="name" type="text" class="feedback-input" required placeholder="Name" id="name" />
+        </p>
+        <p class="email">
+          <input [(ngModel)]="email" name="email" type="email" required class="feedback-input" id="email" placeholder="Email" />
+        </p>
+        <p class="password">
+          <input [(ngModel)]="password" name="password" type="text" class="feedback-input" required placeholder="password" id="password" />
+        </p>
+        <p class="breed">
+          <input [(ngModel)]="breed" name="breed" type="text" class="feedback-input" required placeholder="breed" id="breed" />
+        </p>
+        <p class="age">
+          <input [(ngModel)]="age" name="age" type="number" class="feedback-input" required placeholder="age" id="age" />
+        </p>
+        <p class="location">
+          <input [(ngModel)]="location" name="location" type="text" class="feedback-input" required placeholder="location" id="location" />
+        </p>
+        <p class="upload">
+        <input name="upload" type="file" class="feedback-input" id="upload" />
+        </p>
+
+        <div class="submit">
+          <button type="submit" class="button">UPDATE</button>
+          <div class="ease"></div>
+        </div>
+      </form>
+      <div id="error_message" style="width:100%; height:100%; display:none; ">
+        <h4>
+          Error
+        </h4>
+        Sorry there was an error sending your form.
+      </div>
+      <div id="success_message" style="width:100%; height:100%; display:none; "> <h2>Success! Your Message was Sent Successfully.</h2> </div>
+    </div>
+  </div>
+</div>
+<img src="http://dogtime.com/dog-breeds/samoyed" style= "padding: 100px 0px 0px 100px" width="300" height="200">
