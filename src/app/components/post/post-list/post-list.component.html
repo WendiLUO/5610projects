@@ -1,0 +1,40 @@
+
+<div id='cssmenu'>
+  <ul>
+    <li><a [routerLink]="['/user/' + userId + '/home']">Home</a></li>
+    <li class='active'><a [routerLink]="">Your Posts</a></li>
+    <li><a [routerLink]="['/user/' + userId]">Profile</a></li>
+  </ul>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-9">
+      <br/>
+      <br/>
+      <br/>
+      <div *ngFor="let post of posts">
+        <!--<li class="list-group-item">-->
+
+        <div class="row" style="border-top:thick double lightblue;">
+          <div class="col-xs-6">
+            <img src={{post.pic}}>
+          </div>
+          <div class="col-xs-6">
+            <p>{{post.content}}</p>
+            <div class = "bottomRight">
+              <span class="glyphicon glyphicon-comment fbblue"></span>
+              <span class="glyphicon glyphicon-thumbs-up fbblue"></span>
+            </div>
+          </div>
+
+        </div>
+        <!--</li>-->
+        <br/>
+
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <a [routerLink]="['/user/' + userId + '/new']" class="glyphicon glyphicon-plus my_plus"></a>
+</div>
