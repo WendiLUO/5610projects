@@ -36,5 +36,13 @@ export class UserService {
       }
     }
   }
+  findUserByCredentials(username, password) {
+    for (let x = 0; x < this.users.length; x++) {
+      if (this.users[x].name === username && this.users[x].password === password) {
+              return this.users[x];
+      }
+    }
+  }
 }
+
 

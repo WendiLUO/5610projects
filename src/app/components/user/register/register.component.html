@@ -7,16 +7,23 @@
       <section class="login-form">
         <form method="post" action="#" role="login">
           <img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />
-          <input type="string" name="Name" placeholder="Your dog's name" required class="form-control input-lg"/>
-          <input type="password" class="form-control input-lg" id="password" placeholder="Password" required="" />
+          <input type="string" [(ngModel)]="name"
+                 placeholder="Your dog's name" required
+                 class="form-control input-lg"/>
+          <input type="password"
+                 class="form-control input-lg"
+                 id="password"
+                 placeholder="Password"
+                 [(ngModel)]="password"
+                 required="" />
           <input type="password" class="form-control input-lg" id="verify_password" placeholder="Verify Password" required="" />
 
-          <a href="login.html"><button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Register</button></a>
+          <a [routerLink]="['/login']"><button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Register</button></a>
 
 
         </form>
         <form>
-          <a href="login.html"><button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Go back</button></a>
+          <a [routerLink]="['/login']"><button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Go back</button></a>
         </form>
       </section>
     </div>

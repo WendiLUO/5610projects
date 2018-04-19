@@ -5,12 +5,26 @@
 
     <div class="col-md-4">
       <section class="login-form">
-        <form method="post" action="#" role="login">
+        <form (ngSubmit)="login()" #f="ngForm" method="post" action="#" role="login">
           <img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />
-          <input type="String" name="Name" placeholder="Emma" required class="form-control input-lg"/>
-          <input type="password" class="form-control input-lg" id="password" placeholder="Password" required="" />
+          <input
+            type="string"
+            name="name"
+            placeholder="Emma"
+            required
+            class="form-control input-lg"
+            ngModel
+            #name="ngModel"/>
+          <input
+            type="password"
+            class="form-control input-lg"
+            id="password"
+            placeholder="Password"
+            required=""
+            ngModel
+            #name="ngModel"/>
 
-          <button type="submit" name="go" class="btn btn-lg btn-primary btn-block">Sign in</button>
+          <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
           <div>
             <a [routerLink]= "['/register']" >Create account</a> or <a href="#">reset password</a>
           </div>

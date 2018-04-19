@@ -1,13 +1,13 @@
 <div id='cssmenu'>
   <ul>
-    <li><a href='post_list.html'>Home</a></li>
-    <li><a href='personal_post.html'>Your Posts</a></li>
-    <li class='active'><a href='#'>Profile</a></li>
+    <li><a [routerLink]="['/user/' + uid + '/home']">Home</a></li>
+    <li><a [routerLink]="['/user/' + uid + '/post']">Your Posts</a></li>
+    <li class='active'><a [routerLink]="['/user/' + uid]">Profile</a></li>
   </ul>
 </div>
 
 <div>
-  <a href="new_post.html" class="glyphicon glyphicon-plus my_plus"></a>
+  <a [routerLink]="['/user/:uid/new']" class="glyphicon glyphicon-plus my_plus" aria-hidden="true"></a>
 </div>
 
 <div class="container">

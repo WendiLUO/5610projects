@@ -9,14 +9,24 @@ import { RouterModule, Routes } from '@angular/router';
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {UserService} from './services/user.service.client';
+import {PostService} from './services/post.service.client';
 import {HttpModule} from '@angular/http';
+import { PostListComponent } from './components/post/post-list/post-list.component';
+import { PostNewComponent } from './components/post/post-new/post-new.component';
+import {Router} from '@angular/router';
+import { CommentListComponent } from './components/comment/comment-list/comment-list.component';
+import { CommentNewComponent } from './components/comment/comment-new/comment-new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ProfileComponent,
-    RegisterComponent
+    RegisterComponent,
+    PostListComponent,
+    PostNewComponent,
+    CommentListComponent,
+    CommentNewComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +36,7 @@ import {HttpModule} from '@angular/http';
     HttpClientModule,
     HttpModule
   ],
-  providers: [UserService],
+  providers: [UserService, PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
