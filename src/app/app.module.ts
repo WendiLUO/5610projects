@@ -16,6 +16,8 @@ import { PostNewComponent } from './components/post/post-new/post-new.component'
 import {Router} from '@angular/router';
 import { CommentListComponent } from './components/comment/comment-list/comment-list.component';
 import { CommentNewComponent } from './components/comment/comment-new/comment-new.component';
+import {MainPageComponent} from './components/post/main-page/main-page.component';
+import {CommentService} from './services/comment.service.client';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { CommentNewComponent } from './components/comment/comment-new/comment-ne
     PostListComponent,
     PostNewComponent,
     CommentListComponent,
-    CommentNewComponent
+    CommentNewComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ import { CommentNewComponent } from './components/comment/comment-new/comment-ne
     HttpClientModule,
     HttpModule
   ],
-  providers: [UserService, PostService],
+  providers: [UserService, PostService, CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,7 +7,7 @@
 </div>
 
 <div>
-  <a [routerLink]="['/user/:uid/new']" class="glyphicon glyphicon-plus my_plus" aria-hidden="true"></a>
+  <a [routerLink]="['/user/' + uid + '/new']" class="glyphicon glyphicon-plus my_plus" aria-hidden="true"></a>
 </div>
 
 <div class="container">
@@ -15,16 +15,21 @@
     <div id="form-div">
       <form class="montform" id="reused_form" >
         <p class="name">
-          <input [(ngModel)]="name" name="name" type="text" class="feedback-input" required placeholder="Name" id="name" />
+          <input [(ngModel)]="username" name="name" type="text" class="feedback-input" required placeholder="Name" id="username" />
         </p>
         <p class="email">
           <input [(ngModel)]="email" name="email" type="email" required class="feedback-input" id="email" placeholder="Email" />
         </p>
-        <p class="password">
-          <input [(ngModel)]="password" name="password" type="text" class="feedback-input" required placeholder="password" id="password" />
-        </p>
         <p class="breed">
           <input [(ngModel)]="breed" name="breed" type="text" class="feedback-input" required placeholder="breed" id="breed" />
+        </p>
+        <p>
+        <label class="radio-inline">
+          <input type="radio" name="optionsRadios" id="gender" value="male" [(ngModel)]="gender">Boy
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="optionsRadios" id="gender" value="female" [(ngModel)]="gender">Girl
+        </label>
         </p>
         <p class="age">
           <input [(ngModel)]="age" name="age" type="number" class="feedback-input" required placeholder="age" id="age" />
@@ -32,13 +37,11 @@
         <p class="location">
           <input [(ngModel)]="location" name="location" type="text" class="feedback-input" required placeholder="location" id="location" />
         </p>
-        <p class="upload">
-        <input name="upload" type="file" class="feedback-input" id="upload" />
-        </p>
-
         <div class="submit">
-          <button type="submit" class="button">UPDATE</button>
+          <button (click)="updateUser()" type="submit" class="button">UPDATE</button>
           <div class="ease"></div>
+          <button (click)="logout()" class="button "
+             [routerLink]="['/login']" >Logout</button>
         </div>
       </form>
       <div id="error_message" style="width:100%; height:100%; display:none; ">
@@ -47,8 +50,7 @@
         </h4>
         Sorry there was an error sending your form.
       </div>
-      <div id="success_message" style="width:100%; height:100%; display:none; "> <h2>Success! Your Message was Sent Successfully.</h2> </div>
+      <div id="success_message" style="width:100%; height:100%; display:none; "> <h2>Success! Your Profile was Sent Successfully.</h2> </div>
     </div>
   </div>
 </div>
-<img src="http://dogtime.com/dog-breeds/samoyed" style= "padding: 100px 0px 0px 100px" width="300" height="200">

@@ -11,38 +11,56 @@ import { Router} from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   uid: string;
-  name: string;
+  username: string;
   email: string;
   password: string;
   breed: string;
   age: number;
   location: string;
+  gender: string;
   user = {};
 
-  constructor(private userService: UserService, private activatedRoute: ActivatedRoute) { }
+  constructor(private userService: UserService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
- /* updateUser() {
+  updateUser() {
     this.user = {
-      name: this.name,
+      username: this.username,
       email: this.email,
-      password: this.password,
       breed: this.breed,
       age: this.age,
+      _id: this.uid,
+      gender: this.gender,
       location: this.location
     };
-  }*/
+    this.userService.updateUser(this.uid, this.user)
+      .subscribe((updateUser) => {
+        this.user = updateUser;
+        console.log(this.user);
+        this.router.navigate(['/user/' + this.uid + '/post']);
+      });
+  }
+  logout() {
+    this.userService.logout()
+      .subscribe(
+        (data: any) => this.router.navigate(['/login'])
+      );
+  }
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
       this.uid = params['uid'];
+      this.userService.findUserById(this.uid)
+        .subscribe((user: any) => {
+          this.user = user;
+          console.log(user);
+          this.email = this.user['email'];
+          this.username = this.user['username'];
+          this.breed = this.user['breed'];
+          this.age = this.user['age'];
+          this.location = this.user['location'];
+          this.gender = this.user['gender'];
+        });
     }
     );
-    this.user = this.userService.findUserById(this.uid);
-    this.name = this.user['name'];
-    this.email = this.user['email'];
-    this.password = this.user['password'];
-    this.breed = this.user['breed'];
-    this.age = this.user['age'];
-    this.location = this.user['location'];
   }
 
 }

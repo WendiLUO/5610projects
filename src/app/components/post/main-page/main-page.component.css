@@ -102,36 +102,31 @@
   background: #47c9af;
 }
 img {
-  width: 400px;
-  height: 300px;
+    width: 400px;
+    height: 300px;
 }
 .list-group-item {
-  background-color: transparent;
-  border-top: 1px solid #ddd;
-  border-radius: 0;
-  color: #337ab7;
+background-color: transparent;
+border-top: 1px solid #ddd;
+border-radius: 0;
+color: #337ab7;
 }
 
 .breed {
-  color: #337ab7;
-  font-size: 16px;
+    color: #337ab7;
+    font-size: 16px;
 }
 
 .radio-inline{
-  color: #337ab7;
+    color: #337ab7;
 }
 
 .fbblue{
-  color: #337ab7;
+    color: #337ab7;
 }
 
 .bottomRight{
-  position: absolute;
-  bottom: -250px;
-  right: 0;
-}
-
-.upRight{
-  position: absolute;
-  right: 20px;
+    position: absolute;
+    bottom: -250px;
+    right: 0;
 }

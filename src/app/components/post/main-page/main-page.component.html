@@ -1,0 +1,92 @@
+<div id='cssmenu'>
+  <ul>
+    <li class='active'><a [routerLink]="['/user/' + userId + '/home']">Home</a></li>
+    <li><a [routerLink]="['/user/' + userId + '/post']">Your Posts</a></li>
+    <li><a [routerLink]="['/user/' + userId]">Profile</a></li>
+  </ul>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-9">
+            <br/>
+            <br/>
+            <br/>
+            <div *ngFor="let post of posts">
+<!--                <li class="list-group-item">-->
+
+                    <div class="row" style="border-top:thick double lightblue;">
+                        <div class="col-xs-6">
+                            <img src="../../../../assets/views/images/{{post.pic}}">
+                        </div>
+                        <div class="col-xs-6">
+                          <p>{{post.content}}</p>
+                          <div class = "bottomRight">
+                            <button (click)="show(post._id)" class="glyphicon glyphicon-comment fbblue"></button>
+                            <div *ngIf="comment_showflag_map[post._id]">
+                              <div *ngFor="let comment of comments.get(post._id)">
+                                <p>{{comment.content}}</p>
+                              </div>
+                              <textarea [(ngModel)]="new_comment_content_map[post._id]" rows="2" cols="40"></textarea>
+                              <input (click)="createComment_forOnePost(post._id)" type="submit">
+                            </div>
+                        <a [routerLink]="['/user',this.userId, 'post', this.postId]"></a>
+  <a><span (click)="thumbUp(post._id)" class="glyphicon glyphicon-thumbs-up fbblue">{{post.thumbUp}}</span></a>
+</div>
+                        </div>
+
+                    </div>
+
+
+<!--                </li>-->
+                <br/>
+
+            </div>
+        </div>
+        <div class="col-xs-3">
+            <div class="row" style="margin-top: 70px">
+
+                <form (ngSubmit) = "searchPost()" #f="ngForm" role="form" class="col-xs-12 blocks" style="background:linear-gradient(#f8d3d2,#f3ffe6);width:300px;border-top: 3px #337ab7;">
+                    <div class="form-group ">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-heart"></span>
+                        </a>
+                        <span class="label breed ">Breed</span>
+                        <input type="text" [(ngModel)]="breed" class="form-control" name="breed" id="breed" placeholder="Please enter breed">
+                    </div>
+                    <label class="radio-inline">
+                        <input type="radio" name="optionsRadios" id="gender" value="male" [(ngModel)]="gender">Boy
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="optionsRadios" id="gender" value="female" [(ngModel)]="gender">Girl
+                    </label>
+                    <br/>
+                    <br/>
+                    <button type="submit" class="btn btn-danger" >Find Your Furry Friend</button>
+                </form>
+<!--
+                <div class="row">
+                    <div class="col-xs-2"></div>
+                    <div class="col-xs-10">
+
+                        <li class="list-group-item" style="background:linear-gradient(#f8d3d2,#f3ffe6);width:300px">
+                            <p>Visitor1</p>
+                        </li>
+                        <li class="list-group-item" style="background:linear-gradient(#f3ffe6,#f8d3d2);width:300px">
+                            <p>Visitor2</p>
+                        </li>
+                        <li class="list-group-item" style="background:linear-gradient(#f8d3d2,#f3ffe6);width:300px">
+                            <p>Visitor3</p>
+                        </li>
+                        <li class="list-group-item" style="background:linear-gradient(#f3ffe6,#f8d3d2);width:300px">
+                            <p>Visitor4</p>
+                        </li>
+                    </div>
+                </div>
+-->
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+  <a [routerLink]="['/user/' + userId + '/new']" class="glyphicon glyphicon-plus my_plus"></a>
+</div>

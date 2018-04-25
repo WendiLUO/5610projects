@@ -13,16 +13,23 @@ export class RegisterComponent implements OnInit {
   userId: string;
   username: string;
   password: string;
+  confirmedpassword: string;
+  errorFlag: boolean;
   createUser() {
+    if (this.password !== this.confirmedpassword) {
+      this.errorFlag = true;
+      return;
+    }
     const newUser = {
       username: this.username,
-      password: this.password
+      password: this.password,
     }
-    this.userService.createUser(newUser).subscribe(
+    this.userService.register(this.username, this.password).subscribe(
       (user) => {
         this.userId = user._id;
         this.router.navigate(['/user/', this.userId]);
-      });
+      }
+    );
   }
 
   ngOnInit() {
